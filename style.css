@@ -10,8 +10,8 @@ body, html {
 .segment {
     background-color: orange;
     position: absolute;
-    width: 8vw;
-    height: 8vw;
+    width: 1vw;
+    height: 1vw;
 }
 
 #arena {
