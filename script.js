@@ -60,6 +60,10 @@ $(window).ready(() => {
             elm.moveTo(thisX + x, thisY + y);
         }
 
+        elm.getPos = () => {
+            return [thisX, thisY];
+        }
+
         if(last) {
             // TODO: append at tail
             direction = last.getDirection();
