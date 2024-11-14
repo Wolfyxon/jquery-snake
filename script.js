@@ -86,9 +86,13 @@ $(window).ready(() => {
     }
 
     $(document).keydown((e) => {
+        const currentDir = getHead().getDirection();
+
         for(const dir of Object.keys(keyMap)) {
             const map = keyMap[dir];
             const parsedDir = JSON.parse(`[${dir}]`); // keys are always strings aaaaaa
+
+            if(parsedDir[0] == -currentDir[0] || parsedDir[1] == -currentDir[1]) continue;
 
             if(map.includes(e.key)) {
                 getHead().setDirection(parsedDir);
