@@ -98,7 +98,7 @@ $(window).ready(() => {
             const seg = segments[i];
             const prev = segments[i - 1];
 
-            setInterval(() => {
+            setTimeout(() => {
                 const dir = seg.getDirection();
                 seg.move(dir[0] * speed, dir[1] * speed);
 
@@ -108,8 +108,8 @@ $(window).ready(() => {
 
             }, updateTime * i);
         }
-        
-        //setTimeout(loop, updateTime);
+
+        setTimeout(loop, updateTime);
     }
 
     reset();
