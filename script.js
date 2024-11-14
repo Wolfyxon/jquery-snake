@@ -32,7 +32,7 @@ $(window).ready(() => {
             // TODO: append tail
         } else {
             const cen = "50%";
-            $(elm).css({left: cen, top: cen});
+            elm.css({left: cen, top: cen});
         }
 
         segments.push(elm);
