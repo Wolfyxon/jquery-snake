@@ -12,8 +12,8 @@ body, html {
     border: 1px solid black;
     position: absolute;
     transform: translate(-50%, -50%);
-    width: 1vw;
-    height: 1vw;
+    width: 1%;
+    height: 1%;
 }
 
 #arena {
