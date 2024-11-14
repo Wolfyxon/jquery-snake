@@ -88,8 +88,8 @@ $(window).ready(() => {
         }
     });
 
-    const updateTime = 1000;
-    const speed = 0.1;
+    const updateTime = 100;
+    const speed = 1;
     
     function loop() {
         if(segments.length == 0) return;
