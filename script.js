@@ -92,14 +92,14 @@ $(window).ready(() => {
         
         for(let i = 0; i < segments.length; i++) {
             const seg = segments[i];
-            const next = segments[i + 1];
+            const prev = segments[i - 1];
 
             setInterval(() => {
                 const dir = seg.getDirection();
                 seg.move(dir[0] * speed, dir[1] * speed);
 
-                if(next) {
-                    seg.setDirection(next.getDirection());
+                if(prev) {
+                    seg.setDirection(prev.getDirection());
                 }
 
             }, updateTime * i);
