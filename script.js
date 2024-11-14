@@ -20,10 +20,10 @@ $(window).ready(() => {
 
     function reset() {
         segments = [];
-        addSegment();
-        addSegment();
-        addSegment();
-        
+
+        for(let i = 0; i < 5; i++) {
+            addSegment();
+        }
     }
 
     function getHead() {
