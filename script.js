@@ -21,6 +21,9 @@ $(window).ready(() => {
     function reset() {
         segments = [];
         addSegment();
+        addSegment();
+        addSegment();
+        
     }
 
     function getHead() {
@@ -65,8 +68,14 @@ $(window).ready(() => {
         }
 
         if(last) {
-            // TODO: append at tail
+            const lastPos = last.getPos();
             direction = last.getDirection();
+            
+            elm.moveTo(
+                lastPos[0] - direction[0], 
+                lastPos[1] - direction[1]
+            );
+            
         } else {
             elm.setDirection(Direction.RIGHT);
             elm.moveTo(50, 50);
