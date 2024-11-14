@@ -19,6 +19,8 @@ body, html {
 #arena {
     position: relative;
     background-color: green;
+    border: 5px solid rgb(83, 78, 78);
+    border-radius: 10px;
     width: 90vh;
     height: 90vh;
     margin: auto;
