@@ -4,14 +4,20 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: black;
+    display: flex;
 }
 
 .segment {
     background-color: orange;
     position: absolute;
+    width: 8vw;
+    height: 8vw;
 }
 
 #arena {
     position: relative;
     background-color: green;
+    width: 90vh;
+    height: 90vh;
+    margin: auto;
 }
