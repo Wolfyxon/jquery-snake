@@ -104,24 +104,33 @@ $(window).ready(() => {
     const updateTime = 100;
     const speed = 1;
     
+    let headHistory = [];
+    let loops = 0;
+
     function loop() {
         if(segments.length == 0) return;
+
+        const head = getHead();
+        headHistory.push(head.getPos());
         
         for(let i = 0; i < segments.length; i++) {
             const seg = segments[i];
             const prev = segments[i - 1];
 
-            setTimeout(() => {
-                const dir = seg.getDirection();
-                seg.move(dir[0] * speed, dir[1] * speed);
+            const dir = seg.getDirection();
+            seg.move(dir[0] * speed, dir[1] * speed);
 
-                if(prev) {
-                    seg.setDirection(prev.getDirection());
-                }
-
-            }, updateTime * i);
+            if(prev) {
+                const pos = headHistory[(i * loops) % headHistory.length];
+                seg.moveTo(pos[0], pos[1]);
+            }
         }
 
+        if(headHistory.length > segments.length) {
+            headHistory = [];
+        }
+
+        loops++;
         setTimeout(loop, updateTime);
     }
 
